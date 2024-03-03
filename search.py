@@ -16,7 +16,7 @@ if response.status_code == 200:
     """Extract the 'data' key and then take 20 records (or less if there are fewer available)"""
     records = data.get('data', [])[:num_records]
 
-    """earch for the record with the specified key-value pair"""
+    """Search for the record with the specified key-value pair"""
     found_record = None
     for record in records:
         if record.get(search_key) == search_value:
