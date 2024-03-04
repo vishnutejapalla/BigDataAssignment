@@ -18,7 +18,7 @@ if not redis_client.exists(redis_key):
 
     if response.status_code == 200:
         data = response.json()
-        # Store the data in Redis with a 1-hour expiration time (you can adjust as needed)
+        """Store the data in Redis with a 1-hour expiration time (you can adjust as needed)"""
         redis_client.setex(redis_key, 3600, json.dumps(data))
     else:
         print(f"Error: Unable to fetch data from the API. Status code: {response.status_code}")
